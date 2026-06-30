@@ -1,67 +1,62 @@
 [
   {
     "id": 1,
-    "name": "Classic White T-Shirt",
-    "price": 19.99,
-    "description": "Comfortable cotton t-shirt for everyday wear.",
-    "category": "Clothing",
-    "sizes": ["S", "M", "L", "XL"],
-    "images": [
-      "https://picsum.photos/id/100/600/600",
-      "https://picsum.photos/id/101/600/600",
-      "https://picsum.photos/id/102/600/600"
-    ]
+    "name": "Wireless Headphones",
+    "description": "Premium noise-cancelling wireless headphones.",
+    "price": 129.99,
+    "category": "Electronics",
+    "image": "/images/headphones.jpg",
+    "stock": 15,
+    "rating": 4.5
   },
   {
     "id": 2,
-    "name": "Denim Jacket",
-    "price": 59.99,
-    "description": "Stylish denim jacket with a modern fit.",
-    "category": "Clothing",
-    "sizes": ["M", "L", "XL"],
-    "images": [
-      "https://picsum.photos/id/103/600/600",
-      "https://picsum.photos/id/104/600/600",
-      "https://picsum.photos/id/105/600/600"
-    ]
+    "name": "Smart Watch",
+    "description": "Track your fitness and notifications on the go.",
+    "price": 199.99,
+    "category": "Electronics",
+    "image": "/images/smartwatch.jpg",
+    "stock": 10,
+    "rating": 4.7
   },
   {
     "id": 3,
     "name": "Running Shoes",
+    "description": "Comfortable running shoes for everyday workouts.",
     "price": 89.99,
-    "description": "Lightweight running shoes designed for comfort.",
     "category": "Footwear",
-    "sizes": ["40", "41", "42", "43", "44"],
-    "images": [
-      "https://picsum.photos/id/106/600/600",
-      "https://picsum.photos/id/107/600/600",
-      "https://picsum.photos/id/108/600/600"
-    ]
+    "image": "/images/shoes.jpg",
+    "stock": 25,
+    "rating": 4.3
   },
   {
     "id": 4,
-    "name": "Leather Backpack",
-    "price": 74.99,
-    "description": "Premium leather backpack for work and travel.",
+    "name": "Backpack",
+    "description": "Durable backpack with multiple compartments.",
+    "price": 49.99,
     "category": "Accessories",
-    "sizes": [],
-    "images": [
-      "https://picsum.photos/id/109/600/600",
-      "https://picsum.photos/id/110/600/600",
-      "https://picsum.photos/id/111/600/600"
-    ]
+    "image": "/images/backpack.jpg",
+    "stock": 30,
+    "rating": 4.4
   },
   {
     "id": 5,
-    "name": "Smart Watch",
-    "price": 149.99,
-    "description": "Track fitness and stay connected on the go.",
+    "name": "Gaming Mouse",
+    "description": "High-precision RGB gaming mouse.",
+    "price": 39.99,
     "category": "Electronics",
-    "sizes": [],
-    "images": [
-      "https://picsum.photos/id/112/600/600",
-      "https://picsum.photos/id/113/600/600",
-      "https://picsum.photos/id/114/600/600"
-    ]
+    "image": "/images/mouse.jpg",
+    "stock": 20,
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical keyboard with blue switches.",
+    "price": 79.99,
+    "category": "Electronics",
+    "image": "/images/keyboard.jpg",
+    "stock": 12,
+    "rating": 4.8
   }
 ]

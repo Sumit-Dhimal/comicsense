@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import SearchBar from "../ui/SearchBar";
-import "./layout.css";
+import CartModal from "../ui/CartModal";
 import { Search, ShoppingCart, CircleUser } from "lucide-react";
+import "./layout.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchBtnRef = useRef();
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +38,7 @@ const Navbar = () => {
       ${
         isScrolled
           ? "bg-white shadow-md py-2 md:py-4"
-          : "bg-transparent py-4 md:py-6 text-gray-50"
+          : "bg-transparent py-4 md:py-6"
       }`}
     >
       <div className="max-w-350 mx-auto flex items-center justify-between px-4">
@@ -57,9 +60,19 @@ const Navbar = () => {
           <button ref={searchBtnRef} onClick={toggleSearch}>
             <Search size={24} className="nav-icons" />
           </button>
-          <button>
+          <button
+            onClick={() => setIsCartOpen(true)}
+          >
             <ShoppingCart size={24} className="nav-icons" />
           </button>
+
+          <CartModal  
+            isOpen={isCartOpen}
+            onClose={
+              () => setIsCartOpen(false)
+            }
+          />
+
           <button>
             <CircleUser size={24} className="nav-icons" />
           </button>

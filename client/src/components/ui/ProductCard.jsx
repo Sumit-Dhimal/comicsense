@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
       <div className="overflow-hidden border rounded-xl bg-white shadow-sm transition hover:shadow-lg hover:cursor-pointer">
         <div className="aspect-square overflow-hidden">
           <img
-            src={product.images[0]}
+            src={product.image}
             alt={product.title}
             className="h-64 w-full object-cover"
           />
