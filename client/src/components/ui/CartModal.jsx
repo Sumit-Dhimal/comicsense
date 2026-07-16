@@ -2,10 +2,17 @@ import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import { X } from 'lucide-react';
 import Button from "./Button"
+import { useNavigate } from 'react-router-dom';
 
 const CartModal = ({isOpen, onClose}) => {
 
   const cartItems = useSelector((state) => state.cart.items);
+  const navigate = useNavigate();
+
+  function handleCheckOut() {
+    onClose(); // close modal
+    navigate('/checkout'); 
+  }
 
   // array.reduce((accumulator, currentValue) => accumulator + currentvalue, initialvalue,)
   const subtotal = cartItems.reduce(
@@ -57,7 +64,12 @@ const CartModal = ({isOpen, onClose}) => {
             <span> {subtotal.toFixed(2)} </span>
           </div>
 
-          <Button variant='danger'> Checkout </Button>
+          <Button 
+            onClick={handleCheckOut}
+            variant='danger'
+          > 
+            Checkout 
+          </Button>
 
           <Button
             variant='outline'

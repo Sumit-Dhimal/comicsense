@@ -7,7 +7,7 @@ import "../index.css";
 const Home = () => {
   return (
     <div className="overflow-x-hidden w-full">
-      <img src={bgImg} alt="bg-image" className="w-full h-screen" />
+      {/* <img src={bgImg} alt="bg-image" className="w-full h-screen" />
 
       <div className="container mt-8">
         <div className="flex justify-between">
@@ -22,7 +22,7 @@ const Home = () => {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
