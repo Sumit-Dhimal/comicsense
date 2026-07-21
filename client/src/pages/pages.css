@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.product-heading {
+  @apply text-3xl font-semibold;
+}

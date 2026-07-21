@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.nav-btns {
+  @apply text-4xl text-violet-600 transition-colors ease-in-out hover:text-pink-600 cursor-pointer;
+}
+
+.footer-btns {
+  @apply text-4xl text-pink-600 cursor-pointer;
+}
+
+.footer-list {
+  @apply list-none text-sm flex flex-col gap-2;
+}
+
+.footer-list ul {
+  @apply cursor-pointer text-gray-200 hover:text-gray-800 transition-colors ease-in-out;
+}

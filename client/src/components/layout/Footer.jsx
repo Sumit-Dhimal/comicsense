@@ -1,55 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import "../components.css";
+import logo from "../../assets/logo.png";
+
+import { FaYoutube, FaDiscord, FaInstagram, FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
-  let categories = ["Hoodie", "T-shirt", "Joggers", "Keychains"];
-  let company = ["About", "Cateory"];
-
   return (
-    <div className="bg-gray-800 text-gray-50 w-full h-64 py-4">
-      <div className="max-w-350 mx-auto flex justify-between">
-        {/* Description */}
-        <div className="w-[30%]">
-          <h2 className="font-bold text-2xl mb-4">Animart</h2>
-          <p className="text-gray-400">Experience the Great Outdoors in style with Animart. Shop now and gear up for adventure in Animart</p>
-        </div>    
+    <div className="w-full h-64 bg-violet-600">
+      <div className="mx-auto max-w-340 h-full flex items-center justify-evenly">
+        <img 
+          src={logo}
+          alt="logo - image"
+          className="w-fit h-16"
+        />
 
-        {/* Navigation */}
-        <div className="flex gap-12">
-          <div className="flex flex-col">
-
-            <h3 className="font-semibold text-xl mb-4">Category</h3>
-            {
-              categories.map((item, idx) => (
-                <Link id={idx} className="text-gray-400">
-                  {item}
-                </Link>
-              ))
-            }
-          </div>
-
-          <div className="flex flex-col">
-            <h3 className="font-semibold text-xl mb-4">Company</h3>
-            
-            {company.map((item, index) => (
-              <Link className="text-gray-400">{item}</Link>
-            )) }
-          </div>
+        {/* icons */}
+        <div className="flex gap-4">
+          <FaDiscord className="footer-btns" />
+          <FaInstagram  className="footer-btns" />
+          <FaYoutube className="footer-btns" />
+          <FaGithub className="footer-btns" />
         </div>
 
-        {/* News letter */}
+        {/* offers and help */}
         <div>
-          <h3 className="font-semibold text-xl mb-4">Subscribe to our News letter</h3>
-          <input 
-            type="email"
-            placeholder="Enter your email"
-            className="bg-gray-50 text-gray-800  px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
+          <li className="footer-list">
+            <ul>Coupons & Offers</ul>
+            <ul>Photos & Reviews</ul>
+            <ul>Track Order</ul>
+            <ul>Need help?</ul>
+            <ul>About Us</ul>
+          </li>
+        </div>
+
+        {/* policy and conditions */}
+        <div>
+          <li className="footer-list">
+            <ul>100 Days Return Policy</ul>
+            <ul>Privacy Policy</ul>
+            <ul>Shipping Policy</ul>
+            <ul>Terms & Conditions</ul>
+            <ul>Work With Us</ul>
+          </li>
         </div>
       </div>
-      
+
+      {/* Copy right */}
+      <div className="bg-gray-50 text-gray-600 text-sm text-center py-4"> 
+        <p>
+          All artworks posted on this website is intended as fan art and are submitted by independent artist from around the world and is not purported to be official merchandise unless indicated otherwise. 
+          <br />
+          If you have any issues regarding the artwork do write in to us at care@comicsense.xyz
+          <br />
+          Copyright © 2026 Comicsense
+        </p>
+      </div>
     </div>
   )
-};
+}
 
 export default Footer;
