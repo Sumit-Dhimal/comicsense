@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+.container {
+  @apply w-full max-w-420 mx-auto px-4 sm:px-6 lg:px-8;
+}
+
 .product-heading {
-  @apply text-3xl font-semibold;
+  @apply text-3xl font-extrabold pt-8 pb-6;
 }

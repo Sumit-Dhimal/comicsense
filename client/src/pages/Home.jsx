@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import ProductCard from "../components/ui/ProductCard";
+import tapestry from "../data/tapestry.json";
 import "./pages.css";
-import "../index.css";
-import products from "../data/products.json";
 
 import banner1 from "../assets/banner/banner1.jpeg";
 import banner2 from "../assets/banner/banner2.webp";
@@ -33,7 +33,16 @@ const Home = () => {
       {/* Tapestries */}
       <div className="container">
         <h2 className="product-heading">Tapestries</h2>
-
+        <div className="flex flex-nowrap overflow-x-auto gap-4">
+          {
+            tapestry.map((product, id) => (
+              <ProductCard 
+                key={id}
+                product={product}
+              />
+            ))
+          }
+        </div>
       </div>
       
 

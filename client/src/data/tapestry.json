@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Berserk Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/berserk_tapestry.jpg",
+      "tapestry-images/berserk_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Byakuya Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/byakuya_tapestry.jpg",
+      "tapestry-images/byakuya_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Giyu Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/giyu_tapestry.png",
+      "tapestry-images/giyu_tapestry_zoom.png"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Goku Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/goku_tapestry.webp",
+      "tapestry-images/goku_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Nika Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/nika_tapestry.jpg",
+      "tapestry-images/nika_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Ronin Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/ronin_tapestry.webp",
+      "tapestry-images/ronin_tapestry_zoom.webp"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Samurai Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/samurai_tapestry.jpg",
+      "tapestry-images/samurai_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Sukuna Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/sukuna_tapestry.png",
+      "tapestry-images/sukuna_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Zenitsu Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/zenitsu_tapestry.jpg",
+      "tapestry-images/zenitsu_tapestry_zoom.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Zoro Tapestry",
+    "size": ["Regular", "Large"],
+    "price": 1199,
+    "images": [
+      "tapestry-images/zoro_tapestry.jpg",
+      "tapestry-images/zoro_tapestry_zoom.jpg"
+    ]
+  }
+]
