@@ -15,3 +15,8 @@
 .footer-list ul {
   @apply cursor-pointer text-gray-200 hover:text-gray-800 transition-colors ease-in-out;
 }
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: hsl(0, 0%, 80%) 2px;
+}

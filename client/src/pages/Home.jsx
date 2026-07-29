@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
-import ProductCard from "../components/ui/ProductCard";
-import tapestry from "../data/tapestry.json";
 import "./pages.css";
+
+import ProductCard from "../components/ui/ProductCard";
+import CategoryCard from "../components/ui/CategoryCard.jsx";
+
+import tapestry from "../data/tapestry.json";
+import { categories1 } from "../data/categories.js";
 
 import banner1 from "../assets/banner/banner1.jpeg";
 import banner2 from "../assets/banner/banner2.webp";
@@ -44,7 +48,11 @@ const Home = () => {
           }
         </div>
       </div>
-      
+
+      {/* Categories 1 */}
+      <div className="container">
+        <CategoryCard categories={categories1} />
+      </div>
 
     </div>
   );
