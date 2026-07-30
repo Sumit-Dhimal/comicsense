@@ -1,4 +1,3 @@
-import {motion} from "motion/react";
 import logo from "../../assets/logo.png";
 import "../components.css";
 
@@ -11,7 +10,7 @@ import { LuShoppingCart } from "react-icons/lu";
 
 const Navbar = () => {
   return (
-    <motion.nav
+    <nav
       className="w-full fixed top-0 left-0 z-50"
     > 
       <div className="mx-auto h-20 flex justify-between max-w-340 items-center px-6 py-12">
@@ -31,7 +30,7 @@ const Navbar = () => {
           <LuShoppingCart className="nav-btns" />
         </div>
       </div>
-    </motion.nav>
+    </nav>
   )
 };
 

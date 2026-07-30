@@ -9,3 +9,6 @@
   @apply text-3xl font-extrabold pt-8 pb-6;
 }
 
+.scroll-btn {
+  @apply absolute z-20 bg-white/50 text-gray-500 hover:text-gray-700 transition-colors ease-in-out text-3xl rounded-full p-2 cursor-pointer;
+}
