@@ -1,5 +1,5 @@
 import "./pages.css";
-import { useStatem, useRef } from "react";
+import { useStatem, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ui/ProductCard";
 import CategoryCard from "../components/ui/CategoryCard.jsx";
@@ -11,12 +11,43 @@ import banners from "../data/banners.js";
 
 // icons
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
+import { SlArrowLeft } from "react-icons/sl";
 
 
 const Home = () => {
 
+  const homeScrollRef = useRef(null);
+  const isHovered = useRef(false);
   const scrollRef = useRef(null);
 
+  //handles hero section animation
+  useEffect(() => {
+    const container = homeScrollRef.current;
+    if(!container) return;
+
+    let animationId;
+    const speed = 1; //px per frame
+
+    const animate = () => {
+      if(!isHovered.current) {
+        container.scrollLeft += speed;
+
+        // Total width is duplicated so reset at halfway
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          container.scrollLeft = 0;
+        }
+      }
+
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animationId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+
+  // handles product card scroll animation
   const handleCardScroll = (direction) => {
     const container = scrollRef.current;
     if (!container) return;
@@ -63,19 +94,26 @@ const Home = () => {
     <div className="overflow-hidden w-full">
 
       {/* home banners */}
-      
-      <div className="flex gap-2 overflow-x-auto scrollbar-none">
-        {
-          banners.map((banner, id) => (
-            <img 
-              key={id}
-              src={banner}
-              alt={`banner - ${id}`}
-              className="w-94 h-screen object-cover"
-            />
-          ))
-        }
+      <div className="relative">
+        <div 
+          ref={homeScrollRef}
+          onMouseEnter={() => isHovered.current = true}
+          onMouseLeave={() => isHovered.current = false}
+          className="flex gap-1.5 overflow-x-auto scrollbar-none"
+        >
+          {
+            [...banners, ...banners].map((banner, idx) => (
+              <img 
+                key={idx}
+                src={banner}
+                alt={`banner - ${idx}`}
+                className="w-120 h-screen object-cover shrink-0"
+              />
+            ))
+          }
+        </div>
       </div>
+      
       
       {/* Tapestries */}
       <div className="container relative">
