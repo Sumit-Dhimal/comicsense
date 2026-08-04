@@ -5,8 +5,8 @@ import { FaYoutube, FaDiscord, FaInstagram, FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="w-full h-64 bg-violet-600">
-      <div className="mx-auto max-w-340 h-full flex items-center justify-evenly">
+    <div className="w-full h-56 bg-indigo-700">
+      <div className="mx-auto max-w-330 h-full flex items-center gap-48">
         <img 
           src={logo}
           alt="logo - image"

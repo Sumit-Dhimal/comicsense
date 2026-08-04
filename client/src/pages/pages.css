@@ -12,3 +12,9 @@
 .scroll-btn {
   @apply absolute z-20 bg-white/50 text-gray-500 hover:text-gray-700 transition-colors ease-in-out text-3xl rounded-full p-2 cursor-pointer;
 }
+
+.form-input {
+  @apply 
+    ring ring-gray-400 outline-none focus:ring-pink-500 rounded-sm
+    w-full px-4 py-2 mb-4 mt-1;
+}

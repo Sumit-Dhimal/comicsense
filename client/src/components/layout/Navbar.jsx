@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../components.css";
 import SideNav from "./SideNav";
 
@@ -7,9 +8,11 @@ import logo2 from "../../assets/logo2.png"
 
 import { LuAlignJustify } from "react-icons/lu";
 import { IoCartSharp, IoHeartSharp, IoSearch } from "react-icons/io5";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -35,22 +38,29 @@ const Navbar = () => {
           transition-all duration-300
           ${
             isScrolled
-            ? "bg-gray-50 shadow-md py-1"
-            : "bg-transparent py-6"
+            ? "bg-gray-50 py-1"
+            : "bg-transparent py-4"
+          }
+
+          ${
+            isHome ? "" : "shadow-md"
           }
 
         `}
       > 
         <div className="relative max-w-340 mx-auto h-20 flex justify-between items-center px-6">
+          
+          {/* hamburger menu */}
           <div
             onClick={() => setIsOpen(true)}
           >
             <LuAlignJustify className="nav-btns" />
           </div>
            
+           {/* logo icon */}
           <Link 
             to='/'
-            className="absolute left-1/2 -translate-x-1/2 top-0"
+            className="absolute left-1/2 -translate-x-1/2 top-0" 
           >
             <img 
               src={` ${isScrolled? logo2: logo}`} 
@@ -59,7 +69,7 @@ const Navbar = () => {
             />
           </Link>
           
-
+          {/* btns */}
           <div className="flex gap-4 items-center">
             <IoSearch className="nav-btns" />
             <IoHeartSharp className="nav-btns" />

@@ -45,7 +45,7 @@ const SideNav = ({isOpen, onClose}) => {
       <aside
         className={`
           fixed top-0 left-0
-          min-w-lg h-screen shadow-xl bg-violet-500 z-50
+          min-w-lg h-screen shadow-xl bg-indigo-700 z-50
           transition-transform duration-300
           ${isOpen? "translate-x-0": "-translate-x-full"}
         `}
@@ -100,17 +100,22 @@ const SideNav = ({isOpen, onClose}) => {
         <div className="py-6 mx-8">
 
           {/* login */}
-          <div className="
-            pb-8 w-fit flex items-center gap-2 
-            text-sm text-gray-50 hover:text-pink-600 cursor-pointer
-          ">
-            <LuCircleUserRound size={24} />
+          <Link to="my-account" onClick={onClose}>
+            <div className="
+              pb-8 w-fit flex items-center gap-2 
+              text-sm text-gray-50 hover:text-pink-600 cursor-pointer
+            ">
+              
+              <LuCircleUserRound size={24} />
 
-            <p className="uppercase font-extralight">
-              Login/Register
-            </p>
-          </div>
+              <p className="uppercase font-extralight">
+                Login/Register
+              </p>
+            </div>
+          </Link>
+          
 
+          {/* other links */}
           <div className="flex flex-col gap-1">
             {
               supports.map((item, idx) => (
