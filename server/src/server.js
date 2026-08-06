@@ -1,9 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express, { urlencoded } from "express";
+import cookieParser from "cookie-parser";
+
 import connectDB from "./config/db.js";
 import { notFound, errorHandler } from "./middlewares/errorMiddleware.js";
 import productRoutes from "./routes/product.route.js";
+import userRoutes from "./routes/user.route.js";
 
 const app = express();
 
@@ -13,9 +16,11 @@ connectDB();
 // body parser middlewares
 app.use(express.json());
 app.use(urlencoded({extended: true}));
+app.use(cookieParser()); 
 
 // routes middlewares
 app.use("/products", productRoutes);
+app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server is running");
