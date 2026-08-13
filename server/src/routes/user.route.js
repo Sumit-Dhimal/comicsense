@@ -1,9 +1,10 @@
 import express from "express";
-import { registerUser, loginUser, logoutUser } from "../controllers/user.controller.js";
+import { sendOTP, verifyOTP, loginUser, logoutUser } from "../controllers/user.controller.js";
 
 const router = express.Router();
 
-router.post('/register', registerUser);
+router.post('/sendOTP', sendOTP);
+router.post('/verifyOTP', verifyOTP);
 router.post('/login', loginUser);
 router.post('/logout', logoutUser);
 
