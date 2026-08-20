@@ -48,7 +48,7 @@ const sendOTP = asyncHandler(async(req, res) => {
 
     {
       upsert: true, // Update if the document exists; otherwise, create it.
-      new: true, // it makes sure to return the updated document
+      returnDocument: "after", // it makes sure to return the updated document
     }
   );
 

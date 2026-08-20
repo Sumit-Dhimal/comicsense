@@ -48,7 +48,7 @@ const Navbar = () => {
 
         `}
       > 
-        <div className="relative max-w-340 mx-auto h-20 flex justify-between items-center px-6">
+        <div className="relative max-w-340 mx-auto h-18 flex justify-between items-center px-6">
           
           {/* hamburger menu */}
           <div
@@ -65,7 +65,7 @@ const Navbar = () => {
             <img 
               src={` ${isScrolled? logo2: logo}`} 
               alt="logo"  
-              className="h-20 w-auto cursor-pointer"
+              className="h-18 w-auto cursor-pointer"
             />
           </Link>
           

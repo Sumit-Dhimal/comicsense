@@ -35,6 +35,12 @@
   cursor-pointer;
 }
 
-.my-account-header {
-  @apply font-bold text-2xl mb-12 uppercase;
+.form-input {
+  @apply 
+    ring ring-gray-400 outline-none focus:ring-pink-500 rounded-sm
+    w-96 px-4 py-2 mb-4 mt-1;
+}
+
+.form-header {
+  @apply font-bold text-3xl mb-4 w-full;
 }

@@ -100,7 +100,7 @@ const SideNav = ({isOpen, onClose}) => {
         <div className="py-6 mx-8">
 
           {/* login */}
-          <Link to="my-account" onClick={onClose}>
+          <Link to="/login" onClick={onClose}>
             <div className="
               pb-8 w-fit flex items-center gap-2 
               text-sm text-gray-50 hover:text-pink-600 cursor-pointer
