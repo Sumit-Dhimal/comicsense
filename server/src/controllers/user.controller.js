@@ -148,9 +148,12 @@ const loginUser = asyncHandler(async(req, res) => {
   generateToken(res, user._id);
 
   res.status(200).json({
-    _id: user._id,
-    name: user.username,
-    email: user.email,
+    message: "login successfull",
+    user: {
+      _id: user._id,
+      name: user.username,
+      email: user.email,
+    }
   });
 });
 

@@ -42,6 +42,9 @@ const Register = () => {
         otp: otpCode, // in backend it is otp
       })
 
+      const user = res.data.user;
+      localStorage.setItem("user", JSON.stringify(user));
+
       console.log(res);
       navigate("/");
     } catch (error) {

@@ -28,6 +28,10 @@ const categories = [
 const supports = ["Coupons & Offers", "Photos & Reviwes", "Track Order", "Need Help?", "About Us"];
 
 const SideNav = ({isOpen, onClose}) => {
+
+  const storedUser = localStorage.getItem("user");
+  const user = storedUser ? JSON.parse(storedUser) : null;
+
   return (
     <>
 
@@ -98,21 +102,36 @@ const SideNav = ({isOpen, onClose}) => {
 
         {/* login and others */}
         <div className="py-6 mx-8">
+          
+        {
+            user ? (
+              <Link to="/profile" onClick={onClose}>
+                <div className="
+                  pb-8 w-fit flex items-center gap-2
+                  text-sm text-gray-50 hover:text-pink-600 cursor-pointer
+                ">
+                  <LuCircleUserRound size={24} />
 
-          {/* login */}
-          <Link to="/login" onClick={onClose}>
-            <div className="
-              pb-8 w-fit flex items-center gap-2 
-              text-sm text-gray-50 hover:text-pink-600 cursor-pointer
-            ">
-              
-              <LuCircleUserRound size={24} />
+                  <p className="uppercase font-extralight">
+                    View Profile
+                  </p>
+                </div>
+              </Link>
+            ) : (
+              <Link to="/login" onClick={onClose}>
+                <div className="
+                  pb-8 w-fit flex items-center gap-2
+                  text-sm text-gray-50 hover:text-pink-600 cursor-pointer
+                ">
+                  <LuCircleUserRound size={24} />
 
-              <p className="uppercase font-extralight">
-                Login/Register
-              </p>
-            </div>
-          </Link>
+                  <p className="uppercase font-extralight">
+                    Login/Register
+                  </p>
+                </div>
+              </Link>
+            )
+          }
           
 
           {/* other links */}

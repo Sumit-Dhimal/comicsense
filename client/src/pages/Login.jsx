@@ -22,7 +22,9 @@ const Login = () => {
         password
       })
 
-      console.log(res);
+      const user = res.data.user;
+      localStorage.setItem("user", JSON.stringify(user));
+
       navigate("/");
     } catch (error) {
       console.error(error);
