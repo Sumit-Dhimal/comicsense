@@ -1,13 +1,22 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import { Outlet } from "react-router-dom";
+import RouteSpinner from "./components/ui/RouteSpinner";
+import { Outlet, useLocation } from "react-router-dom";
 
 const App = () => {
+
+  const location = useLocation();
+
+  const hideLayout = 
+    location.pathname === "/login" ||
+    location.pathname === "/register";
+
   return (
     <>
-      <Navbar />
+      <RouteSpinner />
+      {!hideLayout && <Navbar />}
       <Outlet />
-      <Footer />
+      {!hideLayout && <Footer />}
     </>
   );
 };

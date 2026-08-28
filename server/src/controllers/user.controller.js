@@ -30,6 +30,9 @@ const sendOTP = asyncHandler(async(req, res) => {
   // hash verification code
   const hashedCode = await bcrypt.hash(verificationCode, 10);
 
+  // hash password
+  const hashedPassword = await bcrypt.hash(password, 10);
+
   // Expirest after 5 minutes
   const expiresAt = new Date(Date.now() + 5 * 60 * 1000);
 
@@ -41,7 +44,7 @@ const sendOTP = asyncHandler(async(req, res) => {
     {
       username,
       email,
-      password: password,
+      password: hashedPassword,
       verificationCode: hashedCode,
       expiresAt
     }, 
@@ -69,8 +72,8 @@ const verifyOTP = asyncHandler(async(req, res) => {
   const { email, otp } = req.body;
 
   if (!email || !otp) {
-    res.send(400);
-    throw new Error("Please provide email or otp");
+    res.status(400);
+    throw new Error("Please provide email and otp");
   }
 
   // find temporary verification data
@@ -136,7 +139,7 @@ const loginUser = asyncHandler(async(req, res) => {
   const user = await User.findOne({email});
 
   // compare entered pass and pass in database
-  if (!user && !(await user.comparePassword(password))) {
+  if (!user || !(await user.comparePassword(password))) {
     res.status(401);
     throw new Error("Invalid email or password");
   }
@@ -170,4 +173,35 @@ const logoutUser = asyncHandler(async(req, res) => {
   })
 });
 
-export { sendOTP, verifyOTP, loginUser, logoutUser };
+// @desc    get user profile
+// @route   GET /api/users/profile
+// @access  Private
+/*
+Since this route uses the protect middleware, 
+we have access to the user object on the request object. 
+We can use that to get the user from the database and send back the user data.
+*/
+const getUserProfile = asyncHandler(async(req, res) => {
+
+  if (req.user) {
+    res.json({
+      _id: req.user._id,
+      username: req.user.username,
+      email: req.user.email,
+    });
+  }
+  else {
+    res.status(404);
+    throw new Error("User not found");
+  }
+});
+
+// @desc    update user profile
+// @route   PUT /api/users/profile
+// @access  Private
+const updateUserProfile = asyncHandler(async(req, res) => {
+
+});
+
+
+export { sendOTP, verifyOTP, loginUser, logoutUser, getUserProfile, updateUserProfile};

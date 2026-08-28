@@ -26,12 +26,12 @@ const userSchema = new mongoose.Schema({
 })
 
 // hash password before saving
-userSchema.pre("save", async function () {
-  if (!this.isModified("password") || this.passwordIsHashed) return;
+// userSchema.pre("save", async function () {
+//   if (!this.isModified("password") || this.passwordIsHashed) return;
 
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
-});
+//   const salt = await bcrypt.genSalt(10);
+//   this.password = await bcrypt.hash(this.password, salt);
+// });
 
 // comparing hash password and entered password during login
 userSchema.methods.comparePassword = async function (enteredPassword) {
